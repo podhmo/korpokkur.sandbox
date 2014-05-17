@@ -29,6 +29,6 @@ setup(name='korpokkur.sandbox',
       zip_safe=False,
       install_requires = install_requires,
       entry_points = """      [korpokkur.scaffold]
-      pyramid = korpokkur.pyramid:Template
+      pyramid = korpokkur.pyramid:Package
       """
       )

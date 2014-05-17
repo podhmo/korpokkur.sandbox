@@ -16,7 +16,7 @@ pyramid.includes =
 
 sqlalchemy.url = sqlite:///%(here)s/${package}.sqlite
 
-mako.directories = ${package}/app/templates
+mako.directories = ${package}.app:templates
 mako.input_encoding = utf-8
 
 [server:main]
