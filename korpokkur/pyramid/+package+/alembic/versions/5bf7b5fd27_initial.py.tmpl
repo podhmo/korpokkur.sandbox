@@ -1,0 +1,23 @@
+"""initial
+<%! from datetime import datetime %>
+Revision ID: 5bf7b5fd27
+Revises: None
+Create Date: ${datetime.now()}
+
+"""
+
+# revision identifiers, used by Alembic.
+revision = '5bf7b5fd27'
+down_revision = None
+
+from alembic import op
+from alembic import context
+import sqlalchemy as sa
+from ${package}.models import Base
+
+def upgrade():
+    Base.metadata.create_all(context.engine)
+
+
+def downgrade():
+    Base.metadata.drop_all(context.engine) #xxx:
