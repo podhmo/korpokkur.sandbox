@@ -17,4 +17,4 @@ class Package(object):
     }
     __dro__ = ["korpokkur.scaffolds.pygitignore:Package"] #todo:validation
     template_engine = "mako"
-    support_extensions = ["unittest", "nose", "pytest"] #default is unittest
+    support_extensions = ["unittest", "nose", "pytest", "mako", "jinja2"] #default is unittest
