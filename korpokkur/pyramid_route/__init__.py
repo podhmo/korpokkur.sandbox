@@ -22,18 +22,16 @@ def compute_view_definition(input, _):
 def {function_name}(context, request):
     return {{}}
 """
-    route_name=input.load("route_name"), 
+    route_name=input.load("route_name")
     return fmt.format(
         route_name=route_name, 
-        renderer="{}.html".format(route_name.replace(".", "/")), 
+        renderer="{}.html".format(input.load("path")), 
         function_name="{}_view".format(route_name.replace(".", "_"))
     )
 
 @compute_value
 def compute_add_route(input, _):
-    fmt = """\
-    config.add_route("{route_name}", "{path}")
-"""
+    fmt = """config.add_route("{route_name}", "{path}")"""
     return fmt.format(
         route_name=input.load("route_name"), 
         path=input.load("path"))
