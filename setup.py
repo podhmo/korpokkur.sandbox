@@ -28,7 +28,12 @@ setup(name='korpokkur.sandbox',
       include_package_data=True,
       zip_safe=False,
       install_requires = install_requires,
-      entry_points = """      [korpokkur.scaffold]
+      entry_points = """
+      [korpokkur.scaffold]
       pyramid = korpokkur.pyramid:Package
+      pyramid-presentation = korpokkur.pyramid_presentation:Package
+      pyramid-route = korpokkur.pyramid_route:Template
+      [korpokkur.partial.scaffold]
+      alchemy-sample = korpokkur.alchemy_sample:Template
       """
       )

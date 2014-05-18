@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # -*- coding:utf-8 -*-
 from pyramid.view import view_config
-
+from pyramid import httpexceptions
 
 @view_config(route_name='hello', renderer='hello/greeting.html')
 def hello_view(request):

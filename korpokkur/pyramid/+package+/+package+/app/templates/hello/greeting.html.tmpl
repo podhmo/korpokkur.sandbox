@@ -7,7 +7,7 @@
 %if "jinja2" in context.get(":extensions:"):
     <h1>hello {{name}}</h1>
 %else:
-    <h1>hello ${name}</h1>
+    <h1>${"${%s}" % "name"}</h1>
 %endif
 
   </body>

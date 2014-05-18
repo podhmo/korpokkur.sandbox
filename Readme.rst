@@ -22,5 +22,3 @@ if package name is "foo"
     alembic -c alembic.ini upgrade head
     pserve development.ini 
     ## http://localhost:6543
-
-
