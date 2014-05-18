@@ -1,0 +1,25 @@
+# -*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
+
+import sqlalchemy as sa
+import sqlalchemy.orm as orm
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declared_attr
+from sqlalchemy.orm import scoped_session, sessionmaker
+
+Session = scoped_session(sessionmaker())
+engine = sa.create_engine('sqlite://')
+Session.configure(bind=engine)
+
+Base = declarative_base(bind=engine)
+
+class ${modelname}(Base):
+    __tablename__ = "${modelname}"
+    query = Session.query_property()
+
+    id = sa.Column(sa.Integer, primary_key=True)
+    name = sa.Column(sa.String(255), default="", nullable=False)
+    value = sa.Column(sa.String(255), default="", nullable=False)
+
+## first
+Base.metadata.create_all()
