@@ -31,8 +31,8 @@ setup(name='korpokkur.sandbox',
       entry_points = """
       [korpokkur.scaffold]
       pyramid = korpokkur.pyramid:Package
-      pyramid-presentation = korpokkur.pyramid_presentation:Package
       pyramid-route = korpokkur.pyramid_route:Template
+      pyramid-presentation = korpokkur.pyramid_presentation:Package
       [korpokkur.partial.scaffold]
       alchemy-sample = korpokkur.alchemy_sample:Template
       """
