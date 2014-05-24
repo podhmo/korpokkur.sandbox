@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-# -*- coding:utf-8 -*-
 
 from zope.interface import implementer
 from korpokkur.interfaces import IScaffoldTemplate
@@ -48,8 +47,8 @@ class Template(object):
         "path": ("path", compute_path), 
     }
     marker_comments = {
-        "*add_route*": "##[marker] add route", 
-        "*view_definition*": "##[marker] view definition"
+        "*add_route*": "# [marker] add route", 
+        "*view_definition*": "# [marker] view definition"
     }
     cache = {
         "package": get_package_name, 
