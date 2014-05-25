@@ -17,22 +17,24 @@ def compute_path(input, _):
 @compute_value
 def compute_view_definition(input, _):
     fmt = """\
-@view_config(route_name="{route_name}", renderer="{renderer}")
+@view_config(route_name="{module}.{route_name}", renderer="{renderer}")
 def {function_name}(context, request):
     return {{}}
 """
     route_name=input.load("route_name")
     return fmt.format(
-        route_name=route_name, 
-        renderer="{}.html".format(input.load("path")), 
+        module=input.load("name"),
+        route_name=route_name,
+        renderer="{}.html".format(input.load("path")),
         function_name="{}_view".format(route_name.replace(".", "_"))
     )
 
 @compute_value
 def compute_add_route(input, _):
-    fmt = """config.add_route("{route_name}", "{path}")"""
+    fmt = """config.add_route("{module}.{route_name}", "{path}")"""
     return fmt.format(
-        route_name=input.load("route_name"), 
+        module=input.load("name"),
+        route_name=input.load("route_name"),
         path=input.load("path"))
 
 ## see: korpokkur.interfaces:IScaffoldTemplate
