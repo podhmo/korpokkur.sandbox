@@ -35,5 +35,6 @@ setup(name='korpokkur.sandbox',
       pyramid-presentation = korpokkur.pyramid_presentation:Package
       [korpokkur.partial.scaffold]
       alchemy-sample = korpokkur.alchemy_sample:Template
+      pyramid-onefile = korpokkur.pyramid_onefile:Template
       """
       )
